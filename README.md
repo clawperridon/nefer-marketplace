@@ -1,79 +1,36 @@
-# Nefer Marketplace
-
-Premium two-sided fashion marketplace for emerging fashion brands.
-
-## Project Vision
-
-Nefer is a premium, luxury, futuristic fashion marketplace connecting emerging brands with discerning customers worldwide.
-
-## Brand Principles
-
-- Premium, luxury, futuristic aesthetic
-- Clean, scalable, investor-grade code
-- Metallic sand and cosmic blue color palette
-- No cheap, cluttered, or playful aesthetic
-- Design feels like luxury fashion meets technology and modern editorial
-
-## Tech Stack
-
-- **Frontend**: Next.js (App Router)
-- **Database**: PostgreSQL (Supabase)
-- **Authentication**: Supabase Auth
-- **Styling**: Tailwind CSS
-- **State Management**: React Context / Server Components
-- **Deployment**: Vercel
-
-## Project Structure
-
-```
-nefer-marketplace/
-├── src/
-│   ├── components/    # Reusable UI components
-│   ├── lib/           # Utilities and helpers
-│   ├── pages/         # API routes (if needed)
-│   ├── styles/        # Global styles
-│   ├── types/         # TypeScript definitions
-│   └── utils/         # Helper functions
-├── config/            # Configuration files
-├── docs/             # Documentation
-├── scripts/          # Build/deploy scripts
-└── tests/             # Test files
-```
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
+First, run the development server:
+
 ```bash
-# Install dependencies
-npm install
-
-# Run development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Run tests
-npm run test
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Documentation
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- [Project State](docs/PROJECT_STATE.md)
-- [Current Sprint](docs/CURRENT_SPRINT.md)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Brand Guidelines
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Colors**: Metallic sand (#C9A86C), Cosmic blue (#1a2a4a)
-- **Typography**: Syne (display), Inter (body)
-- **Aesthetic**: Premium, futuristic, editorial
+## Learn More
 
-## Security
+To learn more about Next.js, take a look at the following resources:
 
-- Never expose secrets
-- Use environment variables
-- Validate all inputs
-- Follow security best practices
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## License
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Proprietary - All rights reserved
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
