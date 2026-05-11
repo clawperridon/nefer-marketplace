@@ -48,7 +48,7 @@ export interface Cart {
 }
 
 // Get or create cart for customer
-export async function getOrCreateCart() {
+export async function getOrCreateCart(): Promise<{ cart?: any; error?: Error }> {
   const { data: { user } } = await supabase.auth.getUser();
   
   if (!user) {
@@ -108,11 +108,12 @@ export async function getOrCreateCart() {
 
 // Get cart with items
 export async function getCart() {
-  const cart = await getOrCreateCart();
-  
-  if (!cart.cart) {
+  const result = await getOrCreateCart();
+  if (result.error || !result.cart) {
     return { cart: null, items: [], subtotal: 0 };
   }
+  const cart = result.cart;
+
   
   // Get cart items with product details
   const { data: items } = await supabase

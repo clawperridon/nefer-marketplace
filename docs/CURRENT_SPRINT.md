@@ -1,43 +1,32 @@
 # Current Sprint
 
-## Sprint: Backend 2 - Supabase Setup
+## Sprint: Backend 5 - Auth Complete
 
-**Status:** IN PROGRESS
-
-## Previous: Backend 1 - Architecture ✓ Complete
+**Status:** COMPLETE
 
 ---
 
-## Tasks
-- [x] Create BACKEND_ARCHITECTURE.md
-- [x] Review database entities
-- [x] Document user roles
-- [x] Document auth flow
-- [x] Document seller onboarding flow
-- [x] Document product flow
-- [x] Document cart/order flow
-- [x] Document RLS security model
-- [x] Document future Stripe/payment model
-- [x] Document API routes structure
+## Completed Backend Sprints
 
-## Definition of Done
-- [x] Architecture document complete - no coding needed
-- [x] Backend plan is clear
+| Sprint | Name | Status |
+|--------|------|--------|
+| 0 | Project Audit | ✅ |
+| 1 | Architecture Document | ✅ |
+| 2 | Supabase Setup | ✅ |
+| 3 | Database Schema | ✅ |
+| 4 | RLS Policies | ✅ |
+| 5 | Auth & Role Model | ✅ Complete |
 
-## Current Sprint: Backend 2
+---
+
+## Next Sprint: Backend 6 - Seller Onboarding
+
 ### Tasks
-- [ ] Install Supabase client if needed (already installed)
-- [ ] Create Supabase client files (already exists: /lib/supabase.ts)
-- [ ] Create environment variable structure
-- [ ] Add .env.example (already exists)
-- [ ] Ensure .env.local is ignored by git (already in .gitignore)
-- [ ] Document required Supabase keys
+- [ ] Connect seller application form to backend
+- [ ] Test application submission
+- [ ] Verify pending status works
+- [ ] Admin approval planned
 
-## Environment Variables
-```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-```
+---
 
-## Next Sprint: Backend 3 - Database Schema
+## Commit: feat: implement auth and role foundation
