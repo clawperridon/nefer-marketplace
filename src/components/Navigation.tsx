@@ -31,6 +31,7 @@ export function Navigation() {
         <nav className="hidden md:flex items-center gap-8">
           <NavLink href="/discover">Discover</NavLink>
           <NavLink href="/brands">Brands</NavLink>
+          <NavLink href="/for-sellers">For Sellers</NavLink>
           <NavLink href="/community">Community</NavLink>
         </nav>
 
