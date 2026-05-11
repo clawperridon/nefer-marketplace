@@ -1,37 +1,43 @@
 # Current Sprint
 
-## Sprint: Backend 0 - Project Audit
+## Sprint: Backend 2 - Supabase Setup
 
 **Status:** IN PROGRESS
 
+## Previous: Backend 1 - Architecture ✓ Complete
+
+---
+
 ## Tasks
-- [x] Confirm project path: /Users/perridon/projects/nefer-marketplace
-- [x] Run git status - Clean
-- [x] Review current folder structure
-- [x] Review existing pages and components
-- [x] Review package.json
-- [x] Check environment setup
-- [x] Verify Supabase is installed (@supabase/supabase-js)
-- [x] Update PROJECT_STATE.md
+- [x] Create BACKEND_ARCHITECTURE.md
+- [x] Review database entities
+- [x] Document user roles
+- [x] Document auth flow
+- [x] Document seller onboarding flow
+- [x] Document product flow
+- [x] Document cart/order flow
+- [x] Document RLS security model
+- [x] Document future Stripe/payment model
+- [x] Document API routes structure
 
 ## Definition of Done
-- [x] Current state documented
-- [x] Backend gaps identified
-- [x] Git status clean
+- [x] Architecture document complete - no coding needed
+- [x] Backend plan is clear
 
-## Backend Gaps Summary
-1. No real Supabase project connected (placeholder only)
-2. No database schema in Supabase
-3. No Row Level Security policies
-4. No auth flow implementation (UI only)
-5. No seller onboarding backend
-6. No product/brand CRUD backend  
-7. No cart/order backend
-8. No admin backend structure
+## Current Sprint: Backend 2
+### Tasks
+- [ ] Install Supabase client if needed (already installed)
+- [ ] Create Supabase client files (already exists: /lib/supabase.ts)
+- [ ] Create environment variable structure
+- [ ] Add .env.example (already exists)
+- [ ] Ensure .env.local is ignored by git (already in .gitignore)
+- [ ] Document required Supabase keys
 
-## Next Sprint
-**Backend 1: Backend Architecture Document**
+## Environment Variables
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+```
 
-## Commit
-chore: audit project before backend implementation
-(committed as part of Sprint 10 frontend work)
+## Next Sprint: Backend 3 - Database Schema
