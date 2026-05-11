@@ -2,13 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useCart } from "@/lib/cart";
 
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
-}
-
-function NavLink({ href, children }: NavLinkProps) {
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link 
       href={href} 
@@ -21,6 +17,7 @@ function NavLink({ href, children }: NavLinkProps) {
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { count } = useCart();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -39,6 +36,16 @@ export function Navigation() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
+          <Link href="/cart" className="relative p-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            {count > 0 && (
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-metallic-sand text-white text-[10px] flex items-center justify-center rounded-full">
+                {count}
+              </span>
+            )}
+          </Link>
           <NavLink href="/login">Sign In</NavLink>
           <Link 
             href="/join" 
@@ -73,16 +80,19 @@ export function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <nav className="flex flex-col p-4 gap-4">
-            <Link href="/discover" className="text-lg" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/discover" onClick={() => setMobileMenuOpen(false)}>
               Discover
             </Link>
-            <Link href="/brands" className="text-lg" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/brands" onClick={() => setMobileMenuOpen(false)}>
               Brands
             </Link>
-            <Link href="/community" className="text-lg" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/community" onClick={() => setMobileMenuOpen(false)}>
               Community
             </Link>
-            <Link href="/login" className="text-lg" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/cart" onClick={() => setMobileMenuOpen(false)}>
+              Cart ({count})
+            </Link>
+            <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
               Sign In
             </Link>
             <Link 
