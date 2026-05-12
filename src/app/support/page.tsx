@@ -1,0 +1,131 @@
+"use client";
+
+import { useState } from "react";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+
+export default function SupportPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    type: "customer",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <main className="min-h-screen">
+      <Navigation />
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-4xl font-display font-bold mb-4">Support</h1>
+          <p className="text-xl text-muted mb-12">We&apos;re here to help. Get in touch with our team.</p>
+
+          {submitted ? (
+            <div className="bg-white/5 rounded-xl p-8 text-center">
+              <div className="text-4xl mb-4">✓</div>
+              <h2 className="text-2xl font-display font-semibold mb-2">Message Sent</h2>
+              <p className="text-muted">We&apos;ll get back to you within 24 hours.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm mb-2">I&apos;m a</label>
+                <select
+                  value={formData.type}
+                  onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
+                >
+                  <option value="customer">Customer</option>
+                  <option value="brand">Brand / Seller</option>
+                  <option value="press">Press</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm mb-2">Name</label>
+                <input
+                  type="text"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm mb-2">Email</label>
+                <input
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm mb-2">Subject</label>
+                <select
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
+                  required
+                >
+                  <option value="">Select a topic</option>
+                  <option value="order">Order Question</option>
+                  <option value="return">Return / Refund</option>
+                  <option value="shipping">Shipping</option>
+                  <option value="product">Product Question</option>
+                  <option value="brand">Become a Seller</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm mb-2">Message</label>
+                <textarea
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  rows={5}
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-accent"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-accent text-black font-semibold py-4 rounded-lg hover:bg-accent/90 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          )}
+
+          <div className="mt-16 pt-8 border-t border-white/10">
+            <h2 className="text-xl font-display font-semibold mb-4">Other Ways to Reach Us</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white/5 rounded-lg p-6">
+                <h3 className="font-semibold mb-2">Email</h3>
+                <p className="text-muted">hello@nefer.com</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6">
+                <h3 className="font-semibold mb-2">Instagram</h3>
+                <p className="text-muted">@nefer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  );
+}
