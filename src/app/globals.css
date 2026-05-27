@@ -13,9 +13,12 @@
   --ink: #1A1612;
   --silver-mist: #DFE3EA;
   
-  /* New warm pearl colors */
-  --cream: #FFFDF8;
+  /* New luxury colors */
+  --ice-blue: #86D2DF;
+  --electric-blue: #004CFC;
+  --champagne: #DED0B3;
   --rose-cream: #FAF0E8;
+  --cream: #FFFDF8;
   
   /* Accent - Chrome sphere */
   --chrome: #C0C0C0;
@@ -237,4 +240,38 @@
 
 .animate-sphere-roll {
   animation: sphere-roll 15s ease-in-out infinite;
+}
+
+@keyframes float-luxury {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float-luxury {
+  animation: float-luxury 6s ease-in-out infinite;
+}
+
+@keyframes rotate-luxury {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-rotate-luxury {
+  animation: rotate-luxury 20s linear infinite;
+}
+
+@keyframes streak {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.animate-streak {
+  animation: streak 4s ease-in-out infinite;
+}
+
+@theme inline {
+  --color-ice-blue: var(--ice-blue);
+  --color-electric-blue: var(--electric-blue);
+  --color-champagne: var(--champagne);
 }

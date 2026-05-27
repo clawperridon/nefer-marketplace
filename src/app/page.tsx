@@ -29,8 +29,8 @@ export default function Home() {
           <div className="absolute inset-0 rounded-full bg-gradient-radial from-silver-mist/30 via-sand/10 to-transparent blur-3xl" />
         </div>
 
-        {/* Realistic Chrome Ball - Horizontal Rotation */}
-        <div className="relative z-10 w-[320px] h-[320px] md:w-[480px] md:h-[480px]">
+        {/* Luxury Chrome/Pearl Material - Futuristic Editorial */}
+        <div className="relative z-10 w-[340px] h-[340px] md:w-[500px] md:h-[500px] animate-float-luxury">
           {/* 3D Shadow under ball */}
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-gradient-radial from-dune-200/60 via-sand/20 to-transparent blur-xl" />
           
