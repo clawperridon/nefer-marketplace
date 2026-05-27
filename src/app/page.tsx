@@ -21,8 +21,8 @@ export default function Home() {
 
       {/* Hero - Spectacular Brand Book Style */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Warm gradient background - Pearl/Silver shine effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-ivory via-canvas to-linen" />
+        {/* Clean white background - studio feel */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/50 to-neutral-100/30" />
         
         {/* Radiant light effect behind sphere */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] animate-pulse-slow">
@@ -31,29 +31,35 @@ export default function Home() {
 
         {/* Animated Chrome/Pearl Sphere - The centerpiece */}
         <div className="relative z-10 w-[400px] h-[400px] md:w-[600px] md:h-[600px] animate-sphere-float">
-          {/* Outer glow ring */}
-          <div className="absolute inset-0 rounded-full border border-silver-mist/20 animate-ping-slow" />
-          <div className="absolute inset-4 rounded-full border border-ivory/30 animate-ping-slower" />
+          {/* Outer subtle glow */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-silver-mist/10 via-transparent to-dune-100/5" />
           
-          {/* Main sphere gradient - Pearl/Silver */}
+          {/* Main chrome sphere - metallic gradient */}
           <div className="absolute inset-0 rounded-full animate-sphere-spin"
             style={{
-              background: 'conic-gradient(from 0deg at 50% 50%, #f8f8f8 0%, #d4d4d4 20%, #e8e8e8 40%, #b8b8b8 60%, #f0f0f0 80%, #f8f8f8 100%)',
+              background: 'conic-gradient(from -30deg at 50% 50%, #e8e8e8 0%, #c0c0c0 45%, #f0f0f0 55%, #d8d8d8 100%)',
             }}
           />
           
-          {/* Inner shine - Pearl effect */}
-          <div className="absolute inset-2 rounded-full opacity-80"
+          {/* Inner metallic shine - multiple highlights like chrome */}
+          <div className="absolute inset-2 rounded-full opacity-90"
             style={{
-              background: 'radial-gradient(35% 35% at 30% 25%, rgba(255,255,255,0.95), transparent), radial-gradient(circle at 65% 60%, rgba(240,240,245,0.7), transparent), radial-gradient(circle at 50% 80%, rgba(200,200,210,0.4), transparent)',
+              background: `
+                radial-gradient(ellipse 80% 50% at 30% 20%, rgba(255,255,255,0.9) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 70% 65%, rgba(245,240,235,0.5) 0%, transparent 50%),
+                radial-gradient(circle at 50% 85%, rgba(180,180,190,0.3) 0%, transparent 40%)
+              `,
             }}
           />
           
-          {/* Reflection highlight */}
-          <div className="absolute top-8 left-1/4 w-20 h-10 bg-gradient-to-b from-white/60 to-transparent rounded-full blur-sm" />
+          {/* Primary highlight - bright spot upper left */}
+          <div className="absolute top-[15%] left-[25%] w-[30%] h-[20%] bg-gradient-to-br from-white/80 to-transparent rounded-full blur-md" />
           
-          {/* Bottom shadow/grounding */}
-          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-16 blur-2xl opacity-40 bg-gradient-to-t from-sand/60 to-transparent" />
+          {/* Secondary warm highlight - upper right */}
+          <div className="absolute top-[20%] right-[20%] w-[20%] h-[15%] bg-gradient-to-bl from-silver-mist/40 to-transparent rounded-full blur-sm" />
+          
+          {/* Soft ground reflection/shadow */}
+          <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-40 h-12 blur-xl opacity-30 bg-gradient-to-t from-dune-200 to-transparent" />
         </div>
 
         {/* Sparkle effects */}
