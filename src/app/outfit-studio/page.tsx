@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
 
 // Kleding items
 const clothingItems = [
