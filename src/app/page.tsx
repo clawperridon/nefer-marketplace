@@ -31,8 +31,8 @@ export default function Home() {
 
         {/* Luxury Pearl Sphere - Brand Book Aesthetic */}
         <div className="relative z-10 w-[340px] h-[340px] md:w-[500px] md:h-[500px] animate-float-luxury">
-          {/* Soft blue ambient shadow behind sphere - very subtle */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100/8 via-transparent to-blue-200/5 blur-2xl" />
+          {/* Soft blue glow behind sphere */}
+          <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-sky-100/25 via-sky-50/15 to-transparent blur-xl" />
           {/* Ambient glow - sand/champagne */}
           <div className="absolute -inset-16 rounded-full bg-gradient-radial from-sand/15 via-champagne/10 to-transparent blur-2xl" />
           {/* Deep shadow - dusk */}
