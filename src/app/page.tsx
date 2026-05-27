@@ -31,57 +31,32 @@ export default function Home() {
 
         {/* Luxury Chrome/Pearl Material - Futuristic Editorial */}
         <div className="relative z-10 w-[340px] h-[340px] md:w-[500px] md:h-[500px] animate-float-luxury">
-          {/* 3D Shadow under ball */}
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-gradient-radial from-dune-200/60 via-sand/20 to-transparent blur-xl" />
-          
-          {/* Main chrome ball with 3D perspective */}
-          <div className="absolute inset-0 rounded-full animate-roll">
-            {/* Base chrome gradient - horizontal stripes for 3D effect */}
-            <div className="absolute inset-0 rounded-full overflow-hidden">
-              <div className="absolute inset-0 rounded-full"
-                style={{
-                  background: `
-                    linear-gradient(180deg, 
-                      #f0f0f0 0%, 
-                      #d8d8d8 10%, 
-                      #e8e8e8 20%, 
-                      #c8c8c8 30%, 
-                      #f5f5f5 40%, 
-                      #bfbfbf 50%, 
-                      #e8e8e8 60%, 
-                      #cccccc 70%, 
-                      #f0f0f0 80%, 
-                      #d0d0d0 90%, 
-                      #e8e8e8 100%
-                    )
-                  `,
-                }}
-              />
-            </div>
-            
-            {/* 3D lighting - creates spherical depth */}
-            <div className="absolute inset-0 rounded-full"
-              style={{
-                background: `
-                  radial-gradient(ellipse 120% 80% at 50% 120%, rgba(80,80,80,0.6) 0%, transparent 50%),
-                  radial-gradient(ellipse 100% 60% at 50% -20%, rgba(255,255,255,0.5) 0%, transparent 40%),
-                  radial-gradient(circle at 35% 30%, rgba(255,255,255,0.9) 0%, transparent 25%),
-                  radial-gradient(circle at 75% 60%, rgba(200,200,210,0.4) 0%, transparent 20%)
-                `,
-              }}
-            />
-            
-            {/* Top specular highlight - bright spot */}
-            <div className="absolute top-[8%] left-[20%] w-[30%] h-[25%] bg-gradient-to-br from-white via-white/60 to-transparent rounded-full blur-sm" />
-            
-            {/* Secondary highlight - softer */}
-            <div className="absolute top-[20%] right-[25%] w-[15%] h-[12%] bg-gradient-to-bl from-white/40 to-transparent rounded-full blur-xs" />
-            
-            {/* Bottom reflected light */}
-            <div className="absolute bottom-[15%] left-[30%] w-[25%] h-[15%] bg-gradient-to-t from-white/30 to-transparent rounded-full blur-md" />
-            
-            {/* Edge definition for 3D ball feel */}
-            <div className="absolute inset-0 rounded-full shadow-[inset_0_2px_4px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.15)]" />
+          {/* Ambient glow */}
+          <div className="absolute -inset-16 rounded-full bg-gradient-radial from-ice-blue/10 via-champagne/5 to-transparent blur-2xl" />
+          {/* Deep shadow */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[60%] h-6 bg-gradient-radial from-dune-200/50 via-sand/20 to-transparent blur-2xl" />
+          {/* Main ball */}
+          <div className="absolute inset-0 rounded-full animate-rotate-luxury">
+            {/* Base pearl layer */}
+            <div className="absolute inset-0 rounded-full" style={{background: 'linear-gradient(135deg, #f8f8f8 0%, #e8e8ec 25%, #f0f0f4 50%, #dcdce4 75%, #f4f4f8 100%)'}} />
+            {/* Iridescent */}
+            <div className="absolute inset-0 rounded-full opacity-60" style={{background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(133,210,223,0.15) 60deg, rgba(255,255,255,0.3) 120deg, rgba(222,208,179,0.2) 180deg, rgba(133,210,223,0.1) 240deg, rgba(255,255,255,0.25) 300deg, transparent 360deg)'}} />
+            {/* 3D depth */}
+            <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(ellipse 100% 70% at 50% 110%, rgba(100,100,120,0.5) 0%, transparent 45%), radial-gradient(ellipse 90% 50% at 50% -10%, rgba(255,255,255,0.6) 0%, transparent 40%), radial-gradient(circle at 25% 25%, rgba(255,255,255,0.95) 0%, transparent 30%), radial-gradient(circle at 70% 55%, rgba(133,210,223,0.25) 0%, transparent 20%)'}} />
+            {/* Main highlight */}
+            <div className="absolute top-[10%] left-[18%] w-[35%] h-[28%] bg-gradient-to-br from-white via-white/80 to-ice-blue/20 rounded-full blur-sm" />
+            {/* Secondary highlight */}
+            <div className="absolute top-[18%] right-[20%] w-[20%] h-[15%] bg-gradient-to-bl from-ice-blue/30 to-transparent rounded-full blur-xs" />
+            {/* Champagne reflection */}
+            <div className="absolute bottom-[20%] left-[25%] w-[30%] h-[18%] bg-gradient-to-t from-champagne/40 via-champagne/20 to-transparent rounded-full blur-md" />
+            {/* Moving streak */}
+            <div className="absolute top-[30%] left-[10%] w-[40%] h-[8%] bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-full blur-md animate-streak opacity-60" />
+            {/* Electric accent */}
+            <div className="absolute top-[40%] right-[35%] w-2 h-2 rounded-full bg-electric-blue/60 blur-xs animate-pulse" />
+            {/* Glass overlay */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
+            {/* Edge rim */}
+            <div className="absolute inset-0 rounded-full shadow-[inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-3px_6px_rgba(0,0,0,0.1)]" />
           </div>
         </div>
 
