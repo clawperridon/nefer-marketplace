@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/cart";
+import { FavoritesProvider } from "@/lib/favorites";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-display",
@@ -40,7 +41,9 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${manrope.variable} ${jetbrains.variable}`}>
       <body className="font-body antialiased bg-canvas text-ink">
         <CartProvider>
-          {children}
+          <FavoritesProvider>
+            {children}
+          </FavoritesProvider>
         </CartProvider>
       </body>
     </html>

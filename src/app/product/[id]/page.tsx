@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
+import { useFavorites, mapCategoryToType } from "@/lib/favorites";
 
 const products: Record<string, {
   id: string;
@@ -30,6 +31,9 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   const [selectedSize, setSelectedSize] = useState(product?.sizes[0] || "");
   const [added, setAdded] = useState(false);
   const { addItem } = useCart();
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+  const isFav = product ? isFavorite(product.id) : false;
 
   if (!product) {
     return (
@@ -43,6 +47,21 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     setTimeout(() => setAdded(false), 2000);
   };
 
+  const toggleFavorite = () => {
+    if (isFav) {
+      removeFavorite(product.id);
+    } else {
+      addFavorite({
+        id: `fav-${product.id}`,
+        productId: product.id,
+        name: product.name,
+        brand: product.brand,
+        price: product.price,
+        category: mapCategoryToType(product.category),
+      });
+    }
+  };
+
   return (
     <main className="min-h-screen">
       <Navigation />
@@ -52,8 +71,18 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             <Link href="/discover">Discover</Link> / <Link href={`/brand/${product.brandSlug}`}>{product.brand}</Link> / <span className="text-foreground">{product.name}</span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="aspect-[3/4] bg-gradient-to-br from-muted/20 to-muted/5 border border-border flex items-center justify-center">
+            <div className="aspect-[3/4] bg-gradient-to-br from-muted/20 to-muted/5 border border-border flex items-center justify-center relative">
               <div className="text-center"><div className="w-32 h-32 mx-auto mb-4 rounded-full bg-metallic-sand/10 flex items-center justify-center"><span className="text-4xl text-metallic-sand">{product.name.charAt(0)}</span></div><p className="text-muted text-sm">{product.name}</p><p className="text-xs text-metallic-sand">{product.brand}</p></div>
+              {/* Heart Button */}
+              <button 
+                onClick={toggleFavorite}
+                className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform"
+                aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+              >
+                <span className={`text-2xl ${isFav ? "text-red-500" : "text-gray-300"}`}>
+                  {isFav ? "❤️" : "🤍"}
+                </span>
+              </button>
             </div>
             <div>
               <Link href={`/brand/${product.brandSlug}`} className="text-sm text-muted hover:text-foreground">{product.brand}</Link>
@@ -69,7 +98,10 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 </div>
               </div>
               <button onClick={handleAddToCart} className="w-full py-4 bg-foreground text-background font-medium hover:opacity-90 transition-opacity mb-4">{added ? "Added to Cart ✓" : "Add to Cart"}</button>
-              <Link href="/cart" className="w-full block py-4 border border-border text-foreground font-medium hover:bg-muted/10 transition-colors text-center">View Cart</Link>
+              <div className="flex gap-4">
+                <Link href="/cart" className="flex-1 block py-4 border border-border text-foreground font-medium hover:bg-muted/10 transition-colors text-center">View Cart</Link>
+                <Link href="/outfit-studio" className="flex-1 block py-4 border border-sand text-sand font-medium hover:bg-sand/10 transition-colors text-center">Style in Outfit</Link>
+              </div>
             </div>
           </div>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
