@@ -185,8 +185,18 @@
   animation: sphere-float 8s ease-in-out infinite;
 }
 
-.animate-sphere-spin-slow {
-  animation: sphere-shine 25s linear infinite;
+@keyframes roll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(180deg);
+  }
+}
+
+.animate-roll {
+  animation: roll 12s linear infinite;
+  transform-style: preserve-3d;
 }
 
 .animate-ping-slow {
