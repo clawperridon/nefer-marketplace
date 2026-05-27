@@ -29,37 +29,37 @@ export default function Home() {
           <div className="absolute inset-0 rounded-full bg-gradient-radial from-silver-mist/30 via-sand/10 to-transparent blur-3xl" />
         </div>
 
-        {/* Animated Chrome/Pearl Sphere - The centerpiece */}
-        <div className="relative z-10 w-[400px] h-[400px] md:w-[600px] md:h-[600px] animate-sphere-float">
-          {/* Outer subtle glow */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-silver-mist/10 via-transparent to-dune-100/5" />
+        {/* Animated Iridescent Pearl Sphere - The centerpiece */}
+        <div className="relative z-10 w-[380px] h-[380px] md:w-[550px] md:h-[550px] animate-sphere-float">
+          {/* Soft ambient glow */}
+          <div className="absolute inset-0 rounded-full bg-gradient-radial from-sand/20 via-sand/5 to-transparent blur-xl" />
           
-          {/* Main chrome sphere - metallic gradient */}
-          <div className="absolute inset-0 rounded-full animate-sphere-spin"
+          {/* Main sphere - warm pearl gradient */}
+          <div className="absolute inset-0 rounded-full animate-sphere-spin-slow"
             style={{
-              background: 'conic-gradient(from -30deg at 50% 50%, #e8e8e8 0%, #c0c0c0 45%, #f0f0f0 55%, #d8d8d8 100%)',
+              background: 'conic-gradient(from -45deg at 50% 50%, #f5f0e8 0%, #e8dfd0 30%, #f0ebe0 50%, #ddd5c8 70%, #f8f5f0 100%)',
             }}
           />
           
-          {/* Inner metallic shine - multiple highlights like chrome */}
-          <div className="absolute inset-2 rounded-full opacity-90"
+          {/* Inner pearlescent layers */}
+          <div className="absolute inset-1 rounded-full opacity-80"
             style={{
               background: `
-                radial-gradient(ellipse 80% 50% at 30% 20%, rgba(255,255,255,0.9) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 70% 65%, rgba(245,240,235,0.5) 0%, transparent 50%),
-                radial-gradient(circle at 50% 85%, rgba(180,180,190,0.3) 0%, transparent 40%)
+                radial-gradient(ellipse 70% 45% at 25% 18%, rgba(255,252,245,0.95) 0%, transparent 55%),
+                radial-gradient(ellipse 55% 35% at 75% 70%, rgba(255,248,240,0.6) 0%, transparent 45%),
+                radial-gradient(ellipse 80% 50% at 55% 90%, rgba(220,210,195,0.35) 0%, transparent 50%)
               `,
             }}
           />
           
-          {/* Primary highlight - bright spot upper left */}
-          <div className="absolute top-[15%] left-[25%] w-[30%] h-[20%] bg-gradient-to-br from-white/80 to-transparent rounded-full blur-md" />
+          {/* Soft cream highlight - upper left */}
+          <div className="absolute top-[12%] left-[20%] w-[35%] h-[25%] bg-gradient-to-br from-white/85 via-cream/30 to-transparent rounded-full blur-md" />
           
-          {/* Secondary warm highlight - upper right */}
-          <div className="absolute top-[20%] right-[20%] w-[20%] h-[15%] bg-gradient-to-bl from-silver-mist/40 to-transparent rounded-full blur-sm" />
+          {/* Warm side highlight - right side */}
+          <div className="absolute top-[25%] right-[15%] w-[25%] h-[18%] bg-gradient-to-bl from-rose-cream/30 to-transparent rounded-full blur-sm" />
           
-          {/* Soft ground reflection/shadow */}
-          <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-40 h-12 blur-xl opacity-30 bg-gradient-to-t from-dune-200 to-transparent" />
+          {/* Bottom grounding - soft sand shadow */}
+          <div className="absolute -bottom-28 left-1/2 -translate-x-1/2 w-44 h-14 blur-2xl opacity-50 bg-gradient-to-t from-dune-200 via-sand/40 to-transparent" />
         </div>
 
         {/* Sparkle effects */}

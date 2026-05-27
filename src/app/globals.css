@@ -13,6 +13,10 @@
   --ink: #1A1612;
   --silver-mist: #DFE3EA;
   
+  /* New warm pearl colors */
+  --cream: #FFFDF8;
+  --rose-cream: #FAF0E8;
+  
   /* Accent - Chrome sphere */
   --chrome: #C0C0C0;
   --chrome-gradient: linear-gradient(135deg, #E8E8E8 0%, #A0A0A0 50%, #E8E8E8 100%);
@@ -179,6 +183,10 @@
 
 .animate-sphere-float {
   animation: sphere-float 8s ease-in-out infinite;
+}
+
+.animate-sphere-spin-slow {
+  animation: sphere-shine 25s linear infinite;
 }
 
 .animate-ping-slow {
