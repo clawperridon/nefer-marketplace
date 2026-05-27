@@ -66,8 +66,8 @@ export default function CareersPage() {
             <p className="text-muted mb-4">
               We're always looking for talented people. Send us your CV and tell us how you can help.
             </p>
-            <a href="mailto:careers@nefer.com" className="text-accent hover:underline">
-              careers@nefer.com
+            <a href="mailto:careers@nefer.world" className="text-accent hover:underline">
+              careers@nefer.world
             </a>
           </div>
         </div>

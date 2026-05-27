@@ -8,77 +8,156 @@ const featuredBrands = [
   { name: "ECHO", location: "Amsterdam, Netherlands", category: "Avant-Garde", slug: "echo" },
 ];
 
+const pillars = [
+  { title: "Curated", description: "Every brand hand-picked for authenticity and craftsmanship." },
+  { title: "Authentic", description: "Direct from emerging designers to your wardrobe." },
+  { title: "Futuristic", description: "Tomorrow's style, available today." },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6">
-            The Future of
-            <span className="block text-metallic-sand">Fashion</span>
+      {/* Hero - Spectacular Brand Book Style */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Warm gradient background - Pearl/Silver shine effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ivory via-canvas to-linen" />
+        
+        {/* Radiant light effect behind sphere */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] animate-pulse-slow">
+          <div className="absolute inset-0 rounded-full bg-gradient-radial from-silver-mist/30 via-sand/10 to-transparent blur-3xl" />
+        </div>
+
+        {/* Animated Chrome/Pearl Sphere - The centerpiece */}
+        <div className="relative z-10 w-[400px] h-[400px] md:w-[600px] md:h-[600px] animate-sphere-float">
+          {/* Outer glow ring */}
+          <div className="absolute inset-0 rounded-full border border-silver-mist/20 animate-ping-slow" />
+          <div className="absolute inset-4 rounded-full border border-ivory/30 animate-ping-slower" />
+          
+          {/* Main sphere gradient - Pearl/Silver */}
+          <div className="absolute inset-0 rounded-full animate-sphere-spin"
+            style={{
+              background: 'conic-gradient(from 0deg at 50% 50%, #f8f8f8 0%, #d4d4d4 20%, #e8e8e8 40%, #b8b8b8 60%, #f0f0f0 80%, #f8f8f8 100%)',
+            }}
+          />
+          
+          {/* Inner shine - Pearl effect */}
+          <div className="absolute inset-2 rounded-full opacity-80"
+            style={{
+              background: 'radial-gradient(35% 35% at 30% 25%, rgba(255,255,255,0.95), transparent), radial-gradient(circle at 65% 60%, rgba(240,240,245,0.7), transparent), radial-gradient(circle at 50% 80%, rgba(200,200,210,0.4), transparent)',
+            }}
+          />
+          
+          {/* Reflection highlight */}
+          <div className="absolute top-8 left-1/4 w-20 h-10 bg-gradient-to-b from-white/60 to-transparent rounded-full blur-sm" />
+          
+          {/* Bottom shadow/grounding */}
+          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-16 blur-2xl opacity-40 bg-gradient-to-t from-sand/60 to-transparent" />
+        </div>
+
+        {/* Sparkle effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-white/60 rounded-full animate-sparkle-1 blur-sm" />
+          <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-silver-mist/80 rounded-full animate-sparkle-2 blur-sm" />
+          <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-ivory/70 rounded-full animate-sparkle-3 blur-sm" />
+          <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-white/50 rounded-full animate-sparkle-4 blur-sm" />
+        </div>
+
+        {/* Hero Content - Overlaid */}
+        <div className="relative z-20 pt-40 pb-20 px-6 max-w-5xl mx-auto text-center">
+          {/* Brand Name - Like Brand Book */}
+          <h1 className="text-6xl md:text-9xl font-display font-light tracking-wider mb-4 text-ink drop-shadow-sm">
+            nefer
           </h1>
-          <p className="text-xl text-muted max-w-2xl mx-auto mb-10">
-            Discover curated emerging brands that define tomorrow&apos;s style. 
+          {/* Pearl dot replacing the sphere - visual */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-3 h-3 rounded-full bg-gradient-to-br from-white via-silver-mist to-dune-100 animate-pulse shadow-lg shadow-silver-mist/30" />
+          </div>
+          
+          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-dusk mb-4 font-body">
+            A Fashion Mirage
+          </p>
+          
+          <p className="text-lg md:text-xl text-dusk/80 max-w-xl mx-auto mb-12 font-body font-light leading-relaxed">
+            Discover curated emerging brands that define tomorrow&apos;s style.<br/>
             Premium, futuristic, and exclusively yours.
           </p>
-          <div className="flex items-center justify-center gap-4">
+          
+          {/* Buttons - Minimalist */}
+          <div className="flex items-center justify-center gap-6">
             <Link 
               href="/discover" 
-              className="px-6 py-3 bg-metallic-sand text-white font-medium hover:opacity-90 transition-opacity"
+              className="px-8 py-3 bg-ink text-canvas font-body text-sm uppercase tracking-wider hover:bg-dusk transition-colors shadow-lg shadow-ink/10"
             >
-              Explore Collection
+              Explore
             </Link>
             <Link 
               href="/for-sellers" 
-              className="px-6 py-3 border border-border text-foreground font-medium hover:bg-muted/10 transition-colors"
+              className="px-8 py-3 border border-dune-100 text-dusk font-body text-sm uppercase tracking-wider hover:border-sand hover:text-sand transition-colors"
             >
               For Sellers
             </Link>
           </div>
         </div>
+
+        {/* Footer Data - Like Brand Book */}
+        <div className="absolute bottom-8 left-0 right-0 px-6">
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center text-xs font-mono text-dusk/60 gap-4">
+            <span>EST. 2026</span>
+            <span>AMSTERDAM</span>
+            <span>NEFER.WORLD</span>
+          </div>
+        </div>
       </section>
 
-      {/* Featured Brands */}
-      <section className="py-20 px-6 bg-card">
+      {/* Featured Brands - Editorial Grid */}
+      <section className="py-24 px-6 bg-canvas">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold mb-10 text-center">
-            Featured Brands
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex items-end justify-between mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-light text-ink">
+              Featured
+            </h2>
+            <span className="text-xs font-mono text-dusk/50">§ 01</span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-dune-50">
             {featuredBrands.map((brand) => (
               <Link 
                 key={brand.slug}
                 href={`/brand/${brand.slug}`}
-                className="aspect-[3/4] bg-muted/10 border border-border hover:border-metallic-sand transition-colors flex flex-col items-center justify-center p-6"
+                className="aspect-[3/4] bg-canvas hover:bg-ivory transition-colors group flex flex-col items-center justify-center p-8"
               >
-                <span className="text-2xl font-display font-bold">{brand.name}</span>
-                <span className="text-sm text-muted mt-2">{brand.location}</span>
-                <span className="text-xs text-metallic-sand mt-1">{brand.category}</span>
+                <span className="text-3xl font-display font-light tracking-widest group-hover:text-sand transition-colors">
+                  {brand.name}
+                </span>
+                <span className="text-xs font-mono text-dusk/50 mt-4 uppercase tracking-wider">
+                  {brand.location}
+                </span>
+                <span className="text-xs font-body text-dusk/30 mt-2">
+                  {brand.category}
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Value Props */}
-      <section className="py-20 px-6">
+      {/* Pillars */}
+      <section className="py-24 px-6 bg-ivory">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="text-lg font-display font-semibold mb-2">Curated</h3>
-              <p className="text-sm text-muted">Every brand hand-picked for authenticity and craftsmanship.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-display font-semibold mb-2">Authentic</h3>
-              <p className="text-sm text-muted">Direct from emerging designers to your wardrobe.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-display font-semibold mb-2">Futuristic</h3>
-              <p className="text-sm text-muted">Tomorrow&apos;s style, available today.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {pillars.map((pillar, i) => (
+              <div key={pillar.title} className="text-center">
+                <span className="text-xs font-mono text-sand/60">§ 0{i + 2}</span>
+                <h3 className="text-2xl font-display font-light italic mt-4 mb-3 text-ink">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm font-body text-dusk/70 leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

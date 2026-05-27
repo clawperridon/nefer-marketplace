@@ -115,7 +115,7 @@ export default function SupportPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/5 rounded-lg p-6">
                 <h3 className="font-semibold mb-2">Email</h3>
-                <p className="text-muted">hello@nefer.com</p>
+                <p className="text-muted">hello@nefer.world</p>
               </div>
               <div className="bg-white/5 rounded-lg p-6">
                 <h3 className="font-semibold mb-2">Instagram</h3>

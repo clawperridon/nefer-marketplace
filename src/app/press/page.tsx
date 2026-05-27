@@ -66,8 +66,8 @@ export default function PressPage() {
             <p className="text-muted mb-4">
               For press inquiries, interviews, and more:
             </p>
-            <a href="mailto:press@nefer.com" className="text-accent hover:underline">
-              press@nefer.com
+            <a href="mailto:press@nefer.world" className="text-accent hover:underline">
+              press@nefer.world
             </a>
           </div>
         </div>

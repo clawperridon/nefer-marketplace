@@ -68,7 +68,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-semibold mb-4">6. Contact Us</h2>
               <p className="text-muted">
-                For privacy-related questions, contact us at <a href="mailto:privacy@nefer.com" className="text-accent">privacy@nefer.com</a>
+                For privacy-related questions, contact us at <a href="mailto:privacy@nefer.world" className="text-accent">privacy@nefer.world</a>
               </p>
             </div>
           </div>

@@ -62,7 +62,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-semibold mb-4">7. Contact</h2>
               <p className="text-muted">
-                For questions about these terms, contact us at <a href="mailto:legal@nefer.com" className="text-accent">legal@nefer.com</a>
+                For questions about these terms, contact us at <a href="mailto:legal@nefer.world" className="text-accent">legal@nefer.world</a>
               </p>
             </div>
           </div>
